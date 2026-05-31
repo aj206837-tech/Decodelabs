@@ -1,0 +1,744 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.light-mode {
+    background-color: #fcf8f2; 
+    color: #33221a;
+}
+
+body.dark-mode {
+    background-color: #2d1c16;
+    color: #f5e6d3;
+}
+
+nav {
+    background-color: #211611; 
+    border-bottom: 1px solid rgba(218, 165, 32, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center; 
+}
+
+.logo img {
+    width: 100px; 
+    height: auto;
+    margin-right: 14px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-text {
+    font-family: 'Monsieur La Douceur', 'Great Vibes', cursive; 
+    font-size: 34px;       
+    font-weight: normal;   
+    color: rgb(248, 202, 104); 
+    line-height: 0.9;
+}
+
+.logo .coffee {
+    font-family: 'Monsieur La Douceur', 'Great Vibes', cursive; 
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f7f7d5;
+    margin-top: 4px;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navlinks a {
+    text-decoration: none;
+    color: rgb(248, 202, 104); 
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;        
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.navlinks a:hover, 
+.navlinks a.active {
+    color: #ffffff; 
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mode-text {
+    color: #bfa38a; 
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 15px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.theme-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+    height: 30px;
+    background-color: rgba(123, 93, 76, 0.7); 
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch .switch-icon {
+    font-size: 12px;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+    opacity: 0.35; 
+    user-select: none;
+}
+
+.theme-switch .toggle-thumb {
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    right: 4px; 
+    top: 3px;
+    background-color: rgb(248, 202, 104); 
+    border-radius: 50%;
+    z-index: 2;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.theme-switch input:checked ~ .toggle-thumb {
+    transform: translateX(-28px); 
+}
+
+.theme-switch input:not(:checked) ~ .sun-bg { 
+    opacity: 1; 
+}
+
+.theme-switch input:checked ~ .moon-bg { 
+    opacity: 1; 
+}
+
+.one {
+    box-shadow: 0 10px 30px rgba(230, 206, 128, 0.176);
+    background-image: url('./background 2.png'); 
+    height: 70vh; 
+    width: 100%;
+    background-size: cover; 
+    background-position: center; 
+    transition: background-color 0.4s ease;
+    border-radius: 0 0 23px 23px;
+}
+
+.two {   
+    height: 70vh; 
+    width: 100%; 
+}
+
+body.dark-mode .one {
+    filter: brightness(0.8); 
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: 0.3s ease;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;            
+    padding-left: 10%;        
+    max-width: 50%;
+}
+
+.container1 h1 {
+    font-size: 80px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#btn1 {
+    border: 1px solid rgb(248, 202, 104);
+    color: #4d3f1f;
+    background-color: rgb(248, 202, 104);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    height: 50px;
+    width: 130px;
+    font-size: large;
+    font-family: 'Playfair Display', Georgia, serif;
+    cursor: pointer;
+}
+
+#btn1:hover {
+    background-color: rgb(234, 205, 155);
+    color: #1a120e;
+}
+
+#btn2 {
+    border: 1px solid rgb(248, 202, 104);
+    color: rgb(248, 202, 104);
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 15px;
+    height: 50px;
+    width: 130px;
+    font-size: large;
+    font-family: 'Playfair Display', Georgia, serif;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#btn2:hover {
+    background-color: rgb(240, 207, 137);
+    color: #1a120e;
+}
+
+.special-drink-section {
+    padding: 100px 0;
+    width: 100%;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px; 
+}
+
+.three-container {
+    padding: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 50px;
+    box-shadow: 0 10px 30px rgba(230, 206, 128, 0.409);
+    background-color: rgba(116, 98, 88, 0.15); 
+    border: 1px solid rgba(248, 202, 104, 0.1);
+}
+
+.left-content {
+    flex: 1; 
+    max-width: 400px; 
+}
+
+.feature {
+    flex: 1; 
+    max-width: 400px;
+}
+
+.feature-title {
+    color: rgb(248, 202, 104);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.special-header {
+    color: #e4c19f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.featur-title {
+    color: #e4c19f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.special-desc {
+    color: #bfa38a;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+#btn3 {
+    border: 1px solid rgb(248, 202, 104);
+    color: rgb(248, 202, 104);
+    background-color: black;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    height: 50px;
+    width: 170px;
+    font-size: large;
+    font-family: 'Playfair Display', Georgia, serif;
+    cursor: pointer;
+}
+
+#btn3:hover {
+    background-color: rgb(240, 207, 137);
+    color: #1a120e;
+}
+
+.right-card-container {
+    flex: 1.5; 
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.horizontal-drink-card {
+    box-shadow: 0 10px 30px rgba(230, 206, 128, 0.409);
+    background-color: rgba(116, 98, 88, 0.15); 
+    border: 1px solid rgba(248, 202, 104, 0.1);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 700px; 
+    height: 320px;    
+    display: flex;
+    flex-direction: row; 
+    position: relative; 
+    overflow: hidden;
+    padding: 25px 25px 25px 0;
+    align-items: center;
+}
+
+.card-img-side {
+    /* flex: 1; */
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.card-img-side img {
+    max-height: 330px; 
+    width: 100%;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.card-info-side {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 25px; 
+}
+
+.drink-name {
+    color: #cca785;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.drink-desc {
+    color: #bfa38a;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.drink-meta {
+    display: flex;
+    gap: 15px;
+    color: #bfa38a;
+    font-size: 13px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.drink-price {
+    color: rgb(248, 202, 104);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.view-details-btn {
+    border: 1px solid rgba(250, 215, 119, 0.735);
+    color: #d8c475;
+    background-color: #1a120e;
+    border-radius: 8px;
+    padding: 8px 18px;
+    width: fit-content;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-details-btn:hover {
+    background-color: rgb(240, 207, 137);
+    color: #1a120e;
+}
+
+.next-card-arrow {
+    position: absolute;
+    right: 1px; 
+    background-color: #7462586b;
+    color: #e5ccb4;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.next-card-arrow:hover {
+    background-color: rgb(248, 202, 104);
+    color: #1a120e;
+    right: -15px; 
+}
+
+.three {
+    width: 100%;
+    padding: 40px 0;
+}
+/* --- Main Footer Base Styles --- */
+/* --- Main Footer Base Styles --- */
+.main-footer {
+    background-color: #211611; /* نفس لون الـ Nav بتاعك عشان التناسق */
+    color: #f5e6d3;
+    padding: 60px 0 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid rgba(218, 165, 32, 0.15);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.footer-container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-column {
+    
+    flex: 1;
+}
+
+/* تظبيط اللوجو الصورة والكتابة */
+.brand-info img {
+    width: 100px; /* حجم مناسب جداً ومتناسق */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    font-family: 'Monsieur La Douceur', 'Great Vibes', cursive;
+    color: rgb(248, 202, 104);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.footer-desc {
+    font-family: Arial, sans-serif; /* لسهولة القراءة */
+    font-size: 14px;
+    color: #bfa38a;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.social-link {
+    color: #bfa38a; /* اللون الأساسي الهادي */
+    font-size: 18px;
+    background-color: rgba(248, 202, 104, 0.05); /* خلفية دائرية خفيفة جداً */
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid rgba(248, 202, 104, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.social-link:hover {
+    color: #ffffff;
+    background-color: rgb(248, 202, 104); /* بتنور باللون الدهبي */
+    border-color: rgb(248, 202, 104);
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(248, 202, 104, 0.3);
+}
+
+
+.footer-title {
+    color: rgb(248, 202, 104);
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 1px;
+    background-color: rgb(248, 202, 104);
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #bfa38a;
+    font-size: 15px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+/* مواعيد العمل */
+.footer-hours {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #bfa38a;
+}
+
+.footer-hours li {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-hours span:first-child {
+    color: #e4c19f;
+}
+
+/* الجزء السفلي لحقوق النشر */
+.footer-bottom {
+    width: 85%;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(191, 163, 138, 0.15);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #bfa38a;
+}
+
+/* التجاوب مع الموبايل (Responsive) عشان تضمني الـ UX */
+@media(max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    .footer-hours li {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-hours li {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 992px) {
+    .section-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .left-content {
+        max-width: 100%;
+    }
+    .right-card-container {
+        justify-content: center;
+        width: 100%;
+    }
+    .three-container {
+        flex-direction: column;
+        gap: 30px;
+        width: 85%;
+    }
+    .feature {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+@media(max-width: 768px) {
+    nav { 
+        height: 70px; 
+        padding: 0 20px; 
+    }
+    
+    .hamburger { 
+        display: flex; 
+        z-index: 101;
+    }
+    
+    .navlinks { 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: #211611;
+        gap: 25px;
+        padding: 40px 0;
+        align-items: center;
+        transition: left 0.4s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .navlinks.active {
+        left: 0;
+    }
+
+    .logo img { 
+        width: 45px; 
+    }
+    
+    .logo-text { 
+        font-size: 26px; 
+    }
+
+    .container1 {
+        max-width: 90%;
+        padding-left: 5%;
+    }
+
+    .container1 h1 {
+        font-size: 45px;
+    }
+
+    .horizontal-drink-card {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .card-img-side {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .card-img-side img {
+        max-height: 200px;
+    }
+
+    .card-info-side {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .drink-meta {
+        justify-content: center;
+    }
+
+    .next-card-arrow {
+        display: none;
+    }
+}
